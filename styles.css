@@ -1,0 +1,30 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #fafaf9;
+  color: #242424;
+  font: 16px/1.5 system-ui, sans-serif;
+}
+main { max-width: 1120px; margin: 0 auto; padding: 56px 24px; }
+header { margin-bottom: 32px; }
+h1 { margin: 0 0 8px; font-size: 32px; letter-spacing: -1px; }
+h2 { margin: 0 0 20px; font-size: 18px; }
+p { margin: 0; color: #666; }
+roi-calculator { display: block; }
+form { display: grid; grid-template-columns: minmax(300px, 2fr) minmax(0, 3fr); gap: 24px; }
+section { min-width: 0; padding: 28px; border: 1px solid #e5e5e3; border-radius: 12px; background: white; }
+.fields { display: grid; grid-template-columns: 1fr 100px; align-items: center; gap: 18px 16px; }
+label { font-size: 14px; }
+input { width: 100%; padding: 9px 10px; border: 1px solid #d5d5d3; border-radius: 6px; font: inherit; }
+button { width: 100%; margin-top: 28px; padding: 12px; border: 0; border-radius: 6px; background: #242424; color: white; font: inherit; cursor: pointer; }
+button:hover { background: #444; }
+input:focus-visible, button:focus-visible { outline: 2px solid #9b7100; outline-offset: 3px; }
+.note { margin-top: 16px; font-size: 12px; }
+.output > p { font-size: 14px; }
+.chart-wrapper { position: relative; height: 340px; margin-top: 24px; }
+.hidden { display: none !important; }
+@media (max-width: 760px) {
+  main { padding: 32px 16px; }
+  form { grid-template-columns: 1fr; }
+  section { padding: 22px; }
+}

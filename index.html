@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Email Outreach ROI Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0/dist/chartjs-plugin-datalabels.min.js"></script>
+  <script defer src="roi-calculator.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Email outreach ROI calculator</h1>
+      <p>Explore how fewer emails per response could increase annual revenue.</p>
+    </header>
+    <roi-calculator>
+      <form>
+        <section class="inputs" aria-labelledby="inputs-title">
+          <h2 id="inputs-title">Your email outreach team</h2>
+          <div class="fields">
+            <label for="sales-reps">Email senders / SDRs</label>
+            <input id="sales-reps" name="sales-reps" type="number" value="15">
+            <label for="ave-order-value">Average deal value</label>
+            <input id="ave-order-value" name="ave-order-value" type="number" value="11000">
+            <label for="ave-calls-per-sales-rep">Emails sent per sender per day</label>
+            <input id="ave-calls-per-sales-rep" name="ave-calls-per-sales-rep" type="number" value="52">
+            <label for="ave-calls-per-connection">Emails per response</label>
+            <input id="ave-calls-per-connection" name="ave-calls-per-connection" type="number" value="18">
+            <label for="ave-connections-to-scheduled">Responses per scheduled meeting</label>
+            <input id="ave-connections-to-scheduled" name="ave-connections-to-scheduled" type="number" value="4">
+            <label for="ave-meetings-per-scheduled">Scheduled meetings per completed meeting</label>
+            <input id="ave-meetings-per-scheduled" name="ave-meetings-per-scheduled" type="number" value="3">
+            <label for="ave-closing-rate">Close rate (%)</label>
+            <input id="ave-closing-rate" name="ave-closing-rate" type="number" value="27">
+          </div>
+          <button type="submit">Calculate revenue impact</button>
+          <p class="note">Estimates use 250 working days per year.</p>
+        </section>
+        <section class="output" aria-labelledby="output-title">
+          <h2 id="output-title">Revenue impact</h2>
+          <p>Calculate to compare additional annual revenue across four improved email response rates.</p>
+          <div class="chart-wrapper">
+            <canvas id="roi-chart" class="hidden" role="img" aria-label="Additional annual revenue by emails per response"></canvas>
+          </div>
+          <p class="note">Horizontal axis: emails per response. Values use the same currency as your average deal value.</p>
+        </section>
+      </form>
+    </roi-calculator>
+  </main>
+</body>
+</html>
